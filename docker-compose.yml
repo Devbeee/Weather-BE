@@ -7,14 +7,14 @@ services:
     ports:
       - "8000:8000"
     environment:
-      -  PORT = 8000
-      -  CLIENT_URL = http://localhost:3000
+      -  PORT = your_port
+      -  CLIENT_URL = your_client_url
       -  WEATHER_API_URL = http://api.weatherapi.com/v1
-      -  SERVER_API_URL = http://localhost:8000/api/v1
-      -  WEATHER_API_KEY = 58589eee37c44124a95111145240108
-      -  MONGO_CONNECTION_URL = mongodb+srv://tngb1002z1:AYlCiWfXAPfpGq4y@cluster0.aljnauk.mongodb.net/weather
-      -  EMAIL_USER = 21521864@gm.uit.edu.vn
-      -  EMAIL_PASS = bcawqatgfqdpqqrz
+      -  SERVER_API_URL = your_server_url/api/v1
+      -  WEATHER_API_KEY = your_weatherapi_key
+      -  MONGO_CONNECTION_URL = mongodb+srv://your_mongodb_connection_url
+      -  EMAIL_USER = your_email
+      -  EMAIL_PASS = your_password
     volumes:
       - .:/app
       - /app/node_modules
