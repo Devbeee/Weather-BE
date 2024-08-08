@@ -1,20 +1,13 @@
 version: '3.8'
 services:
-  nest-app:
+  web:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
-    environment:
-      -  PORT = 8000
-      -  CLIENT_URL = http://localhost:3000
-      -  WEATHER_API_URL = http://api.weatherapi.com/v1
-      -  SERVER_API_URL = http://localhost:8000/api/v1
-      -  WEATHER_API_KEY = 58589eee37c44124a95111145240108
-      -  MONGO_CONNECTION_URL = mongodb+srv://tngb1002z1:AYlCiWfXAPfpGq4y@cluster0.aljnauk.mongodb.net/weather
-      -  EMAIL_USER = 21521864@gm.uit.edu.vn
-      -  EMAIL_PASS = bcawqatgfqdpqqrz
+    env_file:
+      - .env
     volumes:
       - .:/app
       - /app/node_modules
